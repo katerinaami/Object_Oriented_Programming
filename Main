@@ -1,0 +1,282 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+
+class User
+   {
+    public:
+    int us(string email[30], string name[30], string pass[30]);
+    int count;
+
+ int Friend_Request(int re){
+
+       
+
+        cout<<"type 1.";
+        cin>>re;
+
+        if(re==1){
+            cout<<"sent";
+
+        }
+        else {
+            cout<<"nope.";
+        }
+
+
+
+
+    void Accept(int ac){
+
+        cout<<"type 1.";
+        cin>>ac;
+
+        if(ac==1){
+            count++;
+        }
+        else if(ac==0){
+            count=count;
+        }
+        else{
+            cout<<"pending";
+        }
+   };
+
+    class FriendRequest: public User{
+
+     int fr(int ac){
+
+        if(ac==1){
+            cout<<"accepted";
+        }
+            else if(ac==0){
+                cout<<"rejected";
+            }
+
+            else {
+                cout<<"waiting.";
+            }
+
+        };
+
+ class Message: public User{
+     public:
+        string mes;
+
+    string msg(string mes){
+
+    cout<<"Type a message""\n";
+    cin>>mes;
+
+    };
+
+    class ReplyMessage: public User{
+    public:
+     string rm;
+
+    string rmsg(string rm){
+
+    cout<<"Type to reply""\n";
+    cin>>rm;
+    }
+    };
+
+    int main(){
+
+        int j;
+
+        Message m1;
+
+        ReplyMessage rm1;
+
+        User User1;
+        User User2;
+        User User3;
+
+        User1.email[30]="vergos@prosekstex3.gr\0";
+        User2.email[30]="mpouras@espressaki.gr\0";
+        User3.email[30]="igounaridis@diavaste.gr\0";
+
+        User1.name[30]="kwstas thanasakis";
+        User2.name[30]="katerinos foufoutos";
+        User3.name[30]="giannhs filakis";
+
+        User1.pass[30]="chIribom";
+        User2.pass[30]="chIribim";
+        User3.pass[30]="alfami";
+
+        int flag1=0, flag2=0, flag3=0;
+        int x;
+        int y;
+        int flag=0;
+        int z;
+        
+        cout<<"To log in as User1 type 1.""\n" "To log in as User2 type 2""\n""To log in as User3 type 3";
+        cin>>x;
+
+        switch (x)
+        {
+
+          case 1:       cout<<"User1 enter your email and password";
+                        cin>>User1.email>>User1.pass;
+
+                        if((User1.email=="vergos@prosekstex3.gr") && (User1.pass=="chIribom")){
+                        cout<<"Logged in successfully";
+                       }
+                        while(flag1==0){
+
+                        if((User1.email=="vergos@prosekstex3.gr") && (User1.pass=="chIribom")){
+                        cout<<"Logged in successfully";
+                        flag1=1;
+                        }
+                        else {
+                        cout<<"Something went wrong. Try again.";
+                        flag1=0;
+                        }
+                          } break;
+        case 2:         cout<<"User2 enter your email and password";
+                        cin>>User2.email>>User2.pass;
+
+                        if((User2.email=="mpouras@espressaki.gr") && (User2.pass=="chIribim"))
+                         {
+                        cout<<"Logged in successfully";
+                         }
+                         while (flag2==0){
+
+                         if((User2.email=="mpouras@espressaki.gr") && (User2.pass=="chIribim")){
+                         cout<<"Logged in successfully";
+                         flag2=1;
+                         }
+                         else{
+                          cout<<"Something went wrong.Try again.";
+                          flag2=0;
+                         }
+                         }break;
+
+
+        case 3:         cout<<"User3 enter your email and password";
+                        cin>>User3.email>>User3.pass;
+
+                        if((User1.email=="igounaridis@diavaste.gr") && (User3.pass=="alfami")){
+                        cout<<"Logged in successfully";
+                        }
+                        while(flag3==0){
+
+                        if((User1.email=="igounaridis@diavaste.gr") && (User3.pass=="alfami")){
+                        cout<<"Logged in successfully";
+                        flag3=1;
+                        }
+                        else {
+                        cout<<"Something went wrong. Try again.";
+                        flag3=0;
+                        }
+                         } break;
+
+        default:        cout<<"There are no other users""\n"; break;
+        
+        User bla;
+        int i;
+        vector <string> lf;
+
+        for (i=0; i<count; i++){
+        	User* bla  User();
+            lf.push_back(bla);
+        }
+           
+	            
+              cout<<"To write a message type in 1. If not type in 0.""\n";
+              cin>>flag;
+              cout<<"If you want to send a friend request type in 1. Else type in 0.""\n";
+              cin>>z;
+
+          
+
+            cout<<"User1 is kwstas thanasakis.""\n"
+                  "User2 is katerinos foufoutos.""\n"
+                  "User3 is giannis filakis.";
+
+
+
+            cout<<"User1 sends message -> 1""\n"
+                  "User2 sends message -> 2""\n"
+                  "User3 sends message -> 3""\n"
+                  "User2 replies to User1 -> 4""\n"
+                  "User3 replies to USer1 -> 5""\n"
+                  "User1 replies to User2 -> 6""\n"
+                  "User3 replies to User2 -> 7""\n"
+                  "User1 replies to User3 -> 8""\n"
+                  "User2 replies to User3 -> 9""\n";
+            cin>>y;
+
+            switch(y){
+            while(flag==1){
+
+            case 1:  cout<<"Type a message.""\n"
+                           "kwstas thanasakis:";
+                     cin>>m1.mes;
+                     cout<<"Type 1 to continue.Type 0 to exit.";
+                     cin>>flag; break;
+
+             case 2: cout<<"Type a message.""\n"
+                           "katerinos foufoutos:";
+                     cin>>m1.mes;
+                     cout<<"Type 1 to continue.Type 0 to exit.";
+                     cin>>flag; break;
+
+             case 3: cout<<"Type a message.""\n"
+                           "giannis filakis:";
+                     cin>>m1.mes;
+                     cout<<"Type 1 to continue.Type 0 to exit.";
+                     cin>>flag; break;
+
+             case 4: cout<<"Reply to kwstas:";
+                     cin>>rm1.rm;
+                     cout<<"Type 1 to continue.Type 0 to exit.";
+                     cin>>flag; break;
+
+            case 5: cout<<"Reply to kwstas:";
+                     cin>>rm1.rm;
+                     cout<<"Type 1 to continue.Type 0 to exit.";
+                     cin>>flag; break;
+
+            case 6:  cout<<"Reply to katerinos:";
+                     cin>>rm1.rm;
+                     cout<<"Type 1 to continue.Type 0 to exit.";
+                     cin>>flag; break;
+
+            case 7:  cout<<"Reply to katerinos:";
+                     cin>>rm1.rm;
+                     cout<<"Type 1 to continue.Type 0 to exit.";
+                     cin>>flag; break;
+
+            case 8:  cout<<"Reply to giannis:";
+                     cin>>rm1.rm;
+                     cout<<"Type 1 to continue.Type 0 to exit.";
+                     cin>>flag; break;
+
+            case 9:  cout<<"Reply to giannis:";
+                     cin>>rm1.rm;
+                     cout<<"Type 1 to continue.Type 0 to exit.";
+                     cin>>flag; break;
+
+            default: cout<<"There are no other choices."; break;
+
+            }
+            }
+
+        while(z==1){
+        	Friend_Request(z)
+        	cout<<"To stop sending friend requests type in 0. Else type in 1."
+        	cin>>z;
+		}
+
+        cout<< "Friends' list:";
+        for(j=0; j<count; j++){
+            cout<< lf[j]<<" ";}
+        }
+
+   }
+
+   return 0;}
